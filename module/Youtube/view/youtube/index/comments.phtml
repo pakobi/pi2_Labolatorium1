@@ -1,0 +1,12 @@
+<ul class="list-group">
+<?php foreach($this->comments->items as $com): ?>
+    <li class="list-group-item">
+        <p class="text-left">
+        <?= date('D/M/Y h:i:s', strtotime($com->snippet->topLevelComment->snippet->updatedAt)) ?></br>
+        <b>
+    <?= $com->snippet->topLevelComment->snippet->authorDisplayName ?></b>
+    </br>
+        </p>
+    <?= $com->snippet->topLevelComment->snippet->textDisplay ?></li>
+<?php endforeach; ?>
+</ul>
