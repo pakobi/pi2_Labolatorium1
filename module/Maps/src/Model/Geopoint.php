@@ -46,8 +46,8 @@ class Geopoint implements DbAdapter\AdapterAwareInterface
 
     public function geokoduj($adres){
         $adres = urlencode($adres);
-        //$client = new Client("https://maps.googleapis.com/maps/api/geocode/json?address=$adres&key=AIzaSyApBAwOqKsC5Je6Po90hTulOqadeHsQnBI"); //Robi
-        $client = new Client("https://maps.googleapis.com/maps/api/geocode/json?address=$adres&key=AIzaSyAHX3BvRbr-yzH1Qw50mJvodhVn5CRKOsk");
+        // APIKEY due to security reasons is shared on request
+        $client = new Client("https://maps.googleapis.com/maps/api/geocode/json?address=$adres&key=APIKEY");
          
         $client->setHeaders(['Accept-Encoding' => 'identity']);
         $response = $client->send();
